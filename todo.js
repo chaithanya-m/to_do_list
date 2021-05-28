@@ -14,20 +14,17 @@ $(document).ready(function(){
 		$("#submit").hide();
 		$("#text_pad").hide();
 	
-	if($("#text_pad").val()==""){
-		alert("you must enter your task");
-	}
-	else{
-		var task =$("#text_pad").val();
-	$("ol").append("<li>"+task+  "<button>X</button></li>");
-
-	}
-
+	    if($("#text_pad").val()==""){
+		  alert("you must enter your task");
+	    }
+	    else{
+		  var task =$("#text_pad").val();
+	      $("ol").append("<li>"+task+  "<button onclick='removeItem(this)'>X</button></li>");
+	    }
 	$("#text_pad").val("");	
     });
-    $("button").click(function(){
-    	$(this).parent().remove();
-    });
-    
-   
 });
+function removeItem(elem) {
+	 		$(elem).parent().remove()
+	 	}
+
